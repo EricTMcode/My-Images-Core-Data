@@ -7,18 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		07D0A7B32A3357D300CB7707 /* My_Images_CDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D0A7B22A3357D300CB7707 /* My_Images_CDApp.swift */; };
-		07D0A7B52A3357D300CB7707 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D0A7B42A3357D300CB7707 /* ContentView.swift */; };
+		07D0A7B32A3357D300CB7707 /* AppEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D0A7B22A3357D300CB7707 /* AppEntry.swift */; };
+		07D0A7B52A3357D300CB7707 /* MyImagesGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D0A7B42A3357D300CB7707 /* MyImagesGridView.swift */; };
 		07D0A7B72A3357D400CB7707 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07D0A7B62A3357D400CB7707 /* Assets.xcassets */; };
 		07D0A7BA2A3357D400CB7707 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07D0A7B92A3357D400CB7707 /* Preview Assets.xcassets */; };
+		07D0A7C32A3358AD00CB7707 /* MyImagesDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 07D0A7C12A3358AD00CB7707 /* MyImagesDataModel.xcdatamodeld */; };
+		07D0A7C52A3358FE00CB7707 /* MyImagesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D0A7C42A3358FE00CB7707 /* MyImagesContainer.swift */; };
+		07D0A7C72A33596C00CB7707 /* MyImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D0A7C62A33596C00CB7707 /* MyImage+Extension.swift */; };
+		07D0A7C92A335A8A00CB7707 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D0A7C82A335A8A00CB7707 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		07D0A7AF2A3357D300CB7707 /* My Images CD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Images CD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		07D0A7B22A3357D300CB7707 /* My_Images_CDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_Images_CDApp.swift; sourceTree = "<group>"; };
-		07D0A7B42A3357D300CB7707 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		07D0A7B22A3357D300CB7707 /* AppEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEntry.swift; sourceTree = "<group>"; };
+		07D0A7B42A3357D300CB7707 /* MyImagesGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyImagesGridView.swift; sourceTree = "<group>"; };
 		07D0A7B62A3357D400CB7707 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07D0A7B92A3357D400CB7707 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		07D0A7C22A3358AD00CB7707 /* MyImagesDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyImagesDataModel.xcdatamodel; sourceTree = "<group>"; };
+		07D0A7C42A3358FE00CB7707 /* MyImagesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyImagesContainer.swift; sourceTree = "<group>"; };
+		07D0A7C62A33596C00CB7707 /* MyImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyImage+Extension.swift"; sourceTree = "<group>"; };
+		07D0A7C82A335A8A00CB7707 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +59,10 @@
 		07D0A7B12A3357D300CB7707 /* My Images CD */ = {
 			isa = PBXGroup;
 			children = (
-				07D0A7B22A3357D300CB7707 /* My_Images_CDApp.swift */,
-				07D0A7B42A3357D300CB7707 /* ContentView.swift */,
+				07D0A7B22A3357D300CB7707 /* AppEntry.swift */,
+				07D0A7B42A3357D300CB7707 /* MyImagesGridView.swift */,
+				07D0A7C82A335A8A00CB7707 /* ImagePicker.swift */,
+				07D0A7C02A33589400CB7707 /* CoreData */,
 				07D0A7B62A3357D400CB7707 /* Assets.xcassets */,
 				07D0A7B82A3357D400CB7707 /* Preview Content */,
 			);
@@ -65,6 +75,16 @@
 				07D0A7B92A3357D400CB7707 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		07D0A7C02A33589400CB7707 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				07D0A7C12A3358AD00CB7707 /* MyImagesDataModel.xcdatamodeld */,
+				07D0A7C42A3358FE00CB7707 /* MyImagesContainer.swift */,
+				07D0A7C62A33596C00CB7707 /* MyImage+Extension.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +157,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07D0A7B52A3357D300CB7707 /* ContentView.swift in Sources */,
-				07D0A7B32A3357D300CB7707 /* My_Images_CDApp.swift in Sources */,
+				07D0A7C72A33596C00CB7707 /* MyImage+Extension.swift in Sources */,
+				07D0A7B52A3357D300CB7707 /* MyImagesGridView.swift in Sources */,
+				07D0A7C52A3358FE00CB7707 /* MyImagesContainer.swift in Sources */,
+				07D0A7C92A335A8A00CB7707 /* ImagePicker.swift in Sources */,
+				07D0A7C32A3358AD00CB7707 /* MyImagesDataModel.xcdatamodeld in Sources */,
+				07D0A7B32A3357D300CB7707 /* AppEntry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +363,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		07D0A7C12A3358AD00CB7707 /* MyImagesDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				07D0A7C22A3358AD00CB7707 /* MyImagesDataModel.xcdatamodel */,
+			);
+			currentVersion = 07D0A7C22A3358AD00CB7707 /* MyImagesDataModel.xcdatamodel */;
+			path = MyImagesDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 07D0A7A72A3357D300CB7707 /* Project object */;
 }
