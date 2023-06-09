@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct MyImagesGridView: View {
     @FetchRequest(sortDescriptors: [SortDescriptor(\.name)])
     private var myImages: FetchedResults<MyImage>
+    @StateObject private var imagePicker = ImagePicker()
     
     var body: some View {
         NavigationStack {
@@ -21,6 +23,15 @@ struct MyImagesGridView: View {
                 }
             }
             .navigationTitle("My Images")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    PhotosPicker("New Image",
+                                 selection: $imagePicker.imageSelection,
+                                 matching: .images,
+                                 photoLibrary: .shared())
+                    .buttonStyle(.borderedProminent)
+                }
+            }
         }
     }
 }

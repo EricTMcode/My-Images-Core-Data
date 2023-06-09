@@ -15,6 +15,7 @@
 		07D0A7C52A3358FE00CB7707 /* MyImagesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D0A7C42A3358FE00CB7707 /* MyImagesContainer.swift */; };
 		07D0A7C72A33596C00CB7707 /* MyImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D0A7C62A33596C00CB7707 /* MyImage+Extension.swift */; };
 		07D0A7C92A335A8A00CB7707 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D0A7C82A335A8A00CB7707 /* ImagePicker.swift */; };
+		07D0A7CD2A335D2900CB7707 /* FormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D0A7CC2A335D2900CB7707 /* FormViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		07D0A7C42A3358FE00CB7707 /* MyImagesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyImagesContainer.swift; sourceTree = "<group>"; };
 		07D0A7C62A33596C00CB7707 /* MyImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyImage+Extension.swift"; sourceTree = "<group>"; };
 		07D0A7C82A335A8A00CB7707 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		07D0A7CC2A335D2900CB7707 /* FormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,8 +61,9 @@
 		07D0A7B12A3357D300CB7707 /* My Images CD */ = {
 			isa = PBXGroup;
 			children = (
+				07D0A7CB2A335D1B00CB7707 /* Form */,
 				07D0A7B22A3357D300CB7707 /* AppEntry.swift */,
-				07D0A7B42A3357D300CB7707 /* MyImagesGridView.swift */,
+				07D0A7CA2A335D0200CB7707 /* View */,
 				07D0A7C82A335A8A00CB7707 /* ImagePicker.swift */,
 				07D0A7C02A33589400CB7707 /* CoreData */,
 				07D0A7B62A3357D400CB7707 /* Assets.xcassets */,
@@ -85,6 +88,22 @@
 				07D0A7C62A33596C00CB7707 /* MyImage+Extension.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		07D0A7CA2A335D0200CB7707 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				07D0A7B42A3357D300CB7707 /* MyImagesGridView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		07D0A7CB2A335D1B00CB7707 /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				07D0A7CC2A335D2900CB7707 /* FormViewModel.swift */,
+			);
+			path = Form;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +180,7 @@
 				07D0A7B52A3357D300CB7707 /* MyImagesGridView.swift in Sources */,
 				07D0A7C52A3358FE00CB7707 /* MyImagesContainer.swift in Sources */,
 				07D0A7C92A335A8A00CB7707 /* ImagePicker.swift in Sources */,
+				07D0A7CD2A335D2900CB7707 /* FormViewModel.swift in Sources */,
 				07D0A7C32A3358AD00CB7707 /* MyImagesDataModel.xcdatamodeld in Sources */,
 				07D0A7B32A3357D300CB7707 /* AppEntry.swift in Sources */,
 			);
