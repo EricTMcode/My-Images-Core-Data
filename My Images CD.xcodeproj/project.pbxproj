@@ -16,6 +16,7 @@
 		07D0A7C72A33596C00CB7707 /* MyImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D0A7C62A33596C00CB7707 /* MyImage+Extension.swift */; };
 		07D0A7C92A335A8A00CB7707 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D0A7C82A335A8A00CB7707 /* ImagePicker.swift */; };
 		07D0A7CD2A335D2900CB7707 /* FormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D0A7CC2A335D2900CB7707 /* FormViewModel.swift */; };
+		07D0A7D02A335E1200CB7707 /* ImageFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D0A7CF2A335E1200CB7707 /* ImageFormView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		07D0A7C62A33596C00CB7707 /* MyImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyImage+Extension.swift"; sourceTree = "<group>"; };
 		07D0A7C82A335A8A00CB7707 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		07D0A7CC2A335D2900CB7707 /* FormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewModel.swift; sourceTree = "<group>"; };
+		07D0A7CF2A335E1200CB7707 /* ImageFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFormView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				07D0A7CC2A335D2900CB7707 /* FormViewModel.swift */,
+				07D0A7CF2A335E1200CB7707 /* ImageFormView.swift */,
 			);
 			path = Form;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07D0A7D02A335E1200CB7707 /* ImageFormView.swift in Sources */,
 				07D0A7C72A33596C00CB7707 /* MyImage+Extension.swift in Sources */,
 				07D0A7B52A3357D300CB7707 /* MyImagesGridView.swift in Sources */,
 				07D0A7C52A3358FE00CB7707 /* MyImagesContainer.swift in Sources */,
