@@ -1,4 +1,4 @@
-## My-Images-Core-Data
+## Image and CoreData
 This App will demonstrate how you can save image in documents directory when your persitence layer is CoreData.
 
 - Add Image with PhotoPicker
@@ -12,6 +12,8 @@ This App will demonstrate how you can save image in documents directory when you
   <img src="Screenshots/screen-1.png" width="250">
   <img src="Screenshots/screen-2.png" width="250">
   <img src="Screenshots/screen-3.png" width="250">
+  <img src="Screenshots/screen-4.png" width="250">
+  <img src="Screenshots/screen-5.png" width="250">
 </div>
 
 #### By Stewart Lynch
