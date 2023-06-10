@@ -26,7 +26,13 @@ struct MyImagesGridView: View {
                                     formType = .update(myImage)
                                 } label: {
                                     VStack {
-                                        
+                                        Image(uiImage: myImage.uiImage)
+                                            .resizable()
+                                            .scaledToFill()
+                                            .frame(width: 100, height: 100)
+                                            .clipped()
+                                            .shadow(radius: 5)
+                                        Text(myImage.nameView)
                                     }
                                 }
                             }

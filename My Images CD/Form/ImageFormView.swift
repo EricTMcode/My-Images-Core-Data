@@ -43,6 +43,7 @@ struct ImageFormView: View {
                             }
                         } else {
                             let newImage = MyImage(context: moc)
+                            newImage.name = viewModel.name
                             newImage.id = UUID().uuidString
                             try? moc.save()
                             FileManager().saveImage(with: newImage.imageID, image: viewModel.uiImage)

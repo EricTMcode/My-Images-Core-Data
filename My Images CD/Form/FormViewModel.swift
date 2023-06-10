@@ -22,7 +22,7 @@ class FormViewModel: ObservableObject {
     init(_ MyImage: MyImage) {
         name = MyImage.nameView
         id = MyImage.imageID
-        uiImage = UIImage(systemName: "photo")!
+        uiImage = MyImage.uiImage
     }
     
     var incomplete: Bool {
