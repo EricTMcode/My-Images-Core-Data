@@ -23,6 +23,26 @@ struct ImageFormView: View {
                     .resizable()
                     .scaledToFit()
                 TextField("Image Name", text: $viewModel.name)
+                TextField("Comment", text: $viewModel.comment, axis: .vertical)
+                HStack {
+                    Text("Date Taken")
+                    Spacer()
+                    if viewModel.dataHidden {
+                        Text("No Date")
+                        Button("Set Date") {
+                            viewModel.date = Date()
+                        }
+                    } else {
+                        HStack {
+                            DatePicker("", selection: $viewModel.date, in: ...Date(), displayedComponents: .date)
+                            Button("Clear date") {
+                                viewModel.date = Date.distantPast
+                            }
+                        }
+                    }
+                }
+                .padding()
+                .buttonStyle(.bordered)
                 HStack {
                     if viewModel.updating {
                         PhotosPicker("Change Image",

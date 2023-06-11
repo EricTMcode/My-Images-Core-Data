@@ -67,8 +67,8 @@
 		07D0A7B12A3357D300CB7707 /* My Images CD */ = {
 			isa = PBXGroup;
 			children = (
-				07D0A7CB2A335D1B00CB7707 /* Form */,
 				07D0A7B22A3357D300CB7707 /* AppEntry.swift */,
+				07D0A7CB2A335D1B00CB7707 /* Form */,
 				07D0A7CA2A335D0200CB7707 /* View */,
 				07D0A7C82A335A8A00CB7707 /* ImagePicker.swift */,
 				07D0A7C02A33589400CB7707 /* CoreData */,

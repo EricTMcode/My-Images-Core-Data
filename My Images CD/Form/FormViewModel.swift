@@ -10,6 +10,13 @@ import UIKit
 class FormViewModel: ObservableObject {
     @Published var name = ""
     @Published var uiImage: UIImage
+    @Published var comment = ""
+    @Published var date = Date.distantPast
+    @Published var receivedForm = ""
+    
+    var dataHidden: Bool {
+        date == Date.distantPast
+    }
     
     var id: String?
     
@@ -23,6 +30,9 @@ class FormViewModel: ObservableObject {
         name = MyImage.nameView
         id = MyImage.imageID
         uiImage = MyImage.uiImage
+        comment = MyImage.commentView
+        date = MyImage.dateTaken ?? Date.distantPast
+        receivedForm = MyImage.receivedFromView
     }
     
     var incomplete: Bool {
