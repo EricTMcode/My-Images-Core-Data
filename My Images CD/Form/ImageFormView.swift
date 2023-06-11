@@ -9,12 +9,15 @@ import SwiftUI
 import PhotosUI
 
 struct ImageFormView: View {
+    @EnvironmentObject var shareService: ShareService
+    @Environment(\.managedObjectContext) var moc
+    @Environment(\.dismiss) var dismiss
     @ObservedObject var viewModel: FormViewModel
     @StateObject var imagePicker = ImagePicker()
     @FetchRequest(sortDescriptors: [])
     private var myImages: FetchedResults<MyImage>
-    @Environment(\.managedObjectContext) var moc
-    @Environment(\.dismiss) var dismiss
+    @State private var share = false
+    @State private var name = ""
     
     var body: some View {
         NavigationStack {
@@ -43,6 +46,9 @@ struct ImageFormView: View {
                 }
                 .padding()
                 .buttonStyle(.bordered)
+                if !viewModel.receivedForm.isEmpty {
+                    Text("**Received From**: \(viewModel.receivedForm)")
+                }
                 HStack {
                     if viewModel.updating {
                         PhotosPicker("Change Image",
@@ -56,6 +62,8 @@ struct ImageFormView: View {
                             if let id = viewModel.id,
                                let selectedImage = myImages.first(where: {$0.id == id}) {
                                 selectedImage.name = viewModel.name
+                                selectedImage.comment = viewModel.comment
+                                selectedImage.dateTaken = viewModel.date
                                 FileManager().saveImage(with: id, image: viewModel.uiImage)
                                 if moc.hasChanges {
                                     try? moc.save()
@@ -65,6 +73,8 @@ struct ImageFormView: View {
                             let newImage = MyImage(context: moc)
                             newImage.name = viewModel.name
                             newImage.id = UUID().uuidString
+                            newImage.comment = viewModel.comment
+                            newImage.dateTaken = viewModel.date
                             try? moc.save()
                             FileManager().saveImage(with: newImage.imageID, image: viewModel.uiImage)
                         }
@@ -79,6 +89,8 @@ struct ImageFormView: View {
                 Spacer()
             }
             .padding()
+            .textFieldStyle(.roundedBorder)
+            .disabled(!viewModel.receivedForm.isEmpty)
             .navigationTitle(viewModel.updating ? "Update Image" : "New Image")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -90,18 +102,26 @@ struct ImageFormView: View {
                 }
                 if viewModel.updating {
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        Button {
-                            if let selectedImage = myImages.first(where: {$0.id == viewModel.id}) {
-                                FileManager().deleteImage(with: selectedImage.imageID)
-                                moc.delete(selectedImage)
-                                try? moc.save()
+                        HStack {
+                            Button {
+                                if let selectedImage = myImages.first(where: {$0.id == viewModel.id}) {
+                                    FileManager().deleteImage(with: selectedImage.imageID)
+                                    moc.delete(selectedImage)
+                                    try? moc.save()
+                                }
+                                dismiss()
+                            } label: {
+                                Image(systemName: "trash")
                             }
-                            dismiss()
-                        } label: {
-                            Image(systemName: "trash")
+                            .buttonStyle(.borderedProminent)
+                            .tint(.red)
+                            
+                            Button {
+                                share.toggle()
+                            } label: {
+                                Image(systemName: "square.and.arrow.up")
+                            }
                         }
-                        .buttonStyle(.borderedProminent)
-                        .tint(.red)
                     }
                 }
             }
@@ -110,6 +130,25 @@ struct ImageFormView: View {
                     viewModel.uiImage = newImage
                 }
             }
+            .alert("Your Name", isPresented: $share) {
+                TextField("Your Name", text: $name)
+                Button("OK") {
+                    if let id = viewModel.id {
+                        viewModel.receivedForm = viewModel.receivedForm.isEmpty ? name : viewModel.receivedForm + " -> " + name
+                        let codableImage = CodableImage(comment: viewModel.comment,
+                                                        dateTaken: viewModel.date,
+                                                        id: id,
+                                                        name: viewModel.name,
+                                                        receivedFrom: viewModel.receivedForm)
+                        shareService.saveMyImage(codableImage)
+                    }
+                    dismiss()
+                }
+                Button("Cancel", role: .cancel) {}
+            } message: {
+                Text("Please enter your name.")
+            }
+
         }
     }
 }
@@ -117,5 +156,7 @@ struct ImageFormView: View {
 struct ImageFormView_Previews: PreviewProvider {
     static var previews: some View {
         ImageFormView(viewModel: FormViewModel(UIImage(systemName: "photo")!))
+            .environmentObject(ShareService())
+        
     }
 }
