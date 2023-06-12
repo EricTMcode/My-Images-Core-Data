@@ -36,5 +36,6 @@ class ShareService: ObservableObject {
                 self.codeableImage = codeableImage
             }
         }
+        try? FileManager().removeItem(at: url)
     }
 }

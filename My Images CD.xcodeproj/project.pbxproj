@@ -21,6 +21,7 @@
 		07D0A7D42A34984E00CB7707 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D0A7D32A34984E00CB7707 /* FileManager+Extension.swift */; };
 		07D0A7D62A35F95E00CB7707 /* ShareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D0A7D52A35F95E00CB7707 /* ShareService.swift */; };
 		07D0A7D92A35FFA200CB7707 /* icon-doc.png in Resources */ = {isa = PBXBuildFile; fileRef = 07D0A7D82A35FFA200CB7707 /* icon-doc.png */; };
+		07D0A7DC2A37396B00CB7707 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 07D0A7DB2A37396B00CB7707 /* ZIPFoundation */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07D0A7DC2A37396B00CB7707 /* ZIPFoundation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +141,9 @@
 			dependencies = (
 			);
 			name = "My Images CD";
+			packageProductDependencies = (
+				07D0A7DB2A37396B00CB7707 /* ZIPFoundation */,
+			);
 			productName = "My Images CD";
 			productReference = 07D0A7AF2A3357D300CB7707 /* My Images CD.app */;
 			productType = "com.apple.product-type.application";
@@ -167,6 +172,9 @@
 				Base,
 			);
 			mainGroup = 07D0A7A62A3357D300CB7707;
+			packageReferences = (
+				07D0A7DA2A37396B00CB7707 /* XCRemoteSwiftPackageReference "ZIPFoundation" */,
+			);
 			productRefGroup = 07D0A7B02A3357D300CB7707 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -411,6 +419,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		07D0A7DA2A37396B00CB7707 /* XCRemoteSwiftPackageReference "ZIPFoundation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/weichsel/ZIPFoundation";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.16;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		07D0A7DB2A37396B00CB7707 /* ZIPFoundation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 07D0A7DA2A37396B00CB7707 /* XCRemoteSwiftPackageReference "ZIPFoundation" */;
+			productName = ZIPFoundation;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		07D0A7C12A3358AD00CB7707 /* MyImagesDataModel.xcdatamodeld */ = {
