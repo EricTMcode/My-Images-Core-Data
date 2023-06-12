@@ -9,6 +9,8 @@ import SwiftUI
 import PhotosUI
 
 struct MyImagesGridView: View {
+    @EnvironmentObject var shareService: ShareService
+    @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: [SortDescriptor(\.name)])
     private var myImages: FetchedResults<MyImage>
     @StateObject private var imagePicker = ImagePicker()
@@ -58,6 +60,15 @@ struct MyImagesGridView: View {
                     formType = .new(newImage)
                 }
             }
+            .onChange(of: shareService.codeableImage) { codableImage in
+                if let codableImage {
+                    if let myImage = myImages.first(where: {$0.id == codableImage.id}) {
+                        // This is an update of an existing image
+                    } else {
+                        // This is a new MyImage Item
+                    }
+                }
+            }
             .sheet(item: $formType) { $0 }
         }
     }
@@ -66,5 +77,6 @@ struct MyImagesGridView: View {
 struct MyImagesGridView_Previews: PreviewProvider {
     static var previews: some View {
         MyImagesGridView()
+            .environmentObject(ShareService())
     }
 }

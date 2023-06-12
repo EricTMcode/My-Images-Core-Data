@@ -16,6 +16,7 @@ struct CodableImage: Codable, Equatable {
 }
 
 class ShareService: ObservableObject {
+    @Published var codeableImage: CodableImage?
     static let ext = "myimg"
     
     func saveMyImage(_ codableImage: CodableImage) {
@@ -26,6 +27,14 @@ class ShareService: ObservableObject {
             FileManager().saveJSON(jsonString, fileName: filename)
         } catch {
             print("Could not encode data")
+        }
+    }
+    
+    func restore(url: URL) {
+        if url.pathExtension == Self.ext {
+            if let codeableImage = FileManager().decodeJSON(from: url) {
+                self.codeableImage = codeableImage
+            }
         }
     }
 }

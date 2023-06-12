@@ -117,8 +117,8 @@
 				07D0A7CC2A335D2900CB7707 /* FormViewModel.swift */,
 				07D0A7CF2A335E1200CB7707 /* ImageFormView.swift */,
 				07D0A7D12A3496F200CB7707 /* FormType.swift */,
-				07D0A7D52A35F95E00CB7707 /* ShareService.swift */,
 				07D0A7D32A34984E00CB7707 /* FileManager+Extension.swift */,
+				07D0A7D52A35F95E00CB7707 /* ShareService.swift */,
 			);
 			path = Form;
 			sourceTree = "<group>";

@@ -54,4 +54,19 @@ extension FileManager {
             print("Could not save Json")
         }
     }
+    
+    func decodeJSON(from url: URL) -> CodableImage? {
+        do {
+            let data = try Data(contentsOf: url)
+            do {
+                return try JSONDecoder().decode(CodableImage.self, from: data)
+            } catch {
+                print(error.localizedDescription)
+                return nil
+            }
+        } catch {
+            print(error.localizedDescription)
+            return nil
+        }
+    }
 }
